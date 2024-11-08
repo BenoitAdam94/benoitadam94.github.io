@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Vue.js avec Vue Router</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <style>
+        /* Style de base pour le menu */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        .active {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Menu de navigation -->
+        <nav>
+            <ul>
+                <li><router-link to="/" active-class="active">Accueil</router-link></li>
+                <li><router-link to="/portfolio" active-class="active">Portfolio</router-link></li>
+                <li><router-link to="/liens" active-class="active">Liens</router-link></li>
+                <li><router-link to="/contact" active-class="active">Contact</router-link></li>
+            </ul>
+        </nav>
+
+        <!-- Affichage du contenu de la page courante -->
+        <router-view></router-view>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
